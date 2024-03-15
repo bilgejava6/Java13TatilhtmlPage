@@ -3,8 +3,9 @@ function register(){
        
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    let rePassword = document.getElementById('rePassword').value;
     let email = document.getElementById('email').value;
-    console.log('username....: ', username); 
+
     
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -12,7 +13,8 @@ function register(){
     const raw = JSON.stringify({
     "email": email,
     "username": username,
-    "password": password
+    "password": password,
+    "rePassword": rePassword
     });
 
     const requestOptions = {
@@ -21,8 +23,14 @@ function register(){
     body: raw,
     redirect: "follow"
     };
-
-    fetch(burcuAuthRegister, requestOptions)
+    /**
+     * burcuAuthRegister +
+     * enesAuthRegister +
+     * mustafaAuthRegister +
+     * yaseminAuthRegister +
+     * girayAuthRegister
+     */
+    fetch(girayAuthRegister, requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result));
 }
