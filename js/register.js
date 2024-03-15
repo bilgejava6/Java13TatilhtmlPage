@@ -5,7 +5,7 @@ function register(){
     let password = document.getElementById('password').value;
     let email = document.getElementById('email').value;
     
-    fetch(burcuAuthRegister,{
+    fetch(enesAuthRegister,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
