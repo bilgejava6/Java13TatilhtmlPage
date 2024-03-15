@@ -8,3 +8,10 @@ const burcuAuthRegister = endPointBurcu + 'dev/v1/auth/register';
 
 
 const enesAuthRegister = endPointEnes + 'auth/register';
+
+
+const mustafaAuthRegister = endPointMustafa + 'dev/v1/auth/register';
+
+
+
+const yaseminAuthRegister = endPointYasemin + 'dev/v1/auth/register';

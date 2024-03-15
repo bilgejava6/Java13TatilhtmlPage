@@ -1,24 +1,28 @@
 
 function register(){
-    console.log('çalıştı');    
+       
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let email = document.getElementById('email').value;
+    console.log('username....: ', username); 
     
-    fetch(enesAuthRegister,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            username,
-            password,
-            email
-          })
-    }).then(data=>data.json())
-    .then(data=>{
-        console.log(data);
-    }).catch(ex=>{
-        console.log('Hata...: ', ex)
-    })
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+    "email": email,
+    "username": username,
+    "password": password
+    });
+
+    const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+    };
+
+    fetch("http://34.163.132.23:8080/dev/v1/auth/register", requestOptions)
+    .then((response) => response.json())
+    .then((result) => console.log(result));
 }
