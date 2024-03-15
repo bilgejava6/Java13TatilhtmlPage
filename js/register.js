@@ -22,7 +22,7 @@ function register(){
     redirect: "follow"
     };
 
-    fetch("http://34.163.132.23:8080/dev/v1/auth/register", requestOptions)
+    fetch(burcuAuthRegister, requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result));
 }
